@@ -42,6 +42,8 @@ void printSpiral(struct node* root)
     }
 }
 
+----------------------
+
 
 // Function to do level order
 // traversal line by line
@@ -91,6 +93,33 @@ void levelOrder(node *root)
         }
     }
 }
+
+--------------
+
+void levelOrderReverse(Node *root)
+{
+    int height = findHeight(root);
+    
+    for(int i=height;i>=1;i--)
+    {   
+        printLine(root , i);
+     
+    }
+
+}
+
+void printLevel(Node *root , int level)
+{
+    if(root == NULL)
+        return;
+    if(level == 1)
+        cout<<root->data;
+    
+    printLevel(root->left , level - 1);
+    printLevel(root->right , level + 1);
+
+}
+
 
 
 
