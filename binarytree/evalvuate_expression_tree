@@ -1,0 +1,21 @@
+int evalvuateTree(Node *root)
+{ 
+  if(root == NULL)
+    return 0;
+    
+  if(!root->left && !root->right)
+    return toInt(root->data);
+    
+  int l = evalvuateTree(root->left);
+  
+  int r = evalvuateTree(root->right)
+  
+  if(root->data == '+')
+    return l+r;
+  if(root->data == '-')
+    return l-r;
+  if(root->data == '*')
+    return l*r;
+  if(root->data == '/')
+    return l/r;
+}
