@@ -1,0 +1,37 @@
+Node *createExpressionTree(string str)
+{
+    stack<Node*> st;
+    
+    Node *t;
+    Node *t1;
+    Node *t2;
+    
+    
+    for(int i=0;i<str.length();i++)
+    {
+        if(isOperator(str[i])
+        {
+          t = newNode(str[i]);
+          st.push(t);
+        }
+        else
+        {
+          t = newNode(str[i]);
+          
+          t1 = st.top();
+          st.pop();
+          
+          t2 = st.top();
+          st.pop();
+          
+          t->right = t1;
+          t->left = t2;
+          
+          st.push(t);
+          
+        }
+      
+    }
+    
+    return st.top();
+}
